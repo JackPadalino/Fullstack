@@ -59,5 +59,3 @@ createHumanCalculator=()=>{
     humanCalculator.total = -10;
     return humanCalculator;
 };
-
-//
