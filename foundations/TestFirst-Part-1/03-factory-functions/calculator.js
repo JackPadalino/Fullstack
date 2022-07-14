@@ -23,9 +23,9 @@ createCalculator = () => {
     };
 };
 
-// try to re-do this using the 'map' method!
-
-addSquareMethod = (instances) => {
+/*
+// adding the square method using a for loop:
+const addSquareMethod = (instances) => {
     for(let i=0;i<instances.length;i++){
         instances[i].square=()=>{
             return instances[i].total**2;
@@ -33,6 +33,17 @@ addSquareMethod = (instances) => {
     };
     return instances;
 };
+*/
+
+// adding the square method using the map function:
+const addSquareMethod = instances => {
+    return instances.map(calc => {
+      calc.square = function () {
+        return this.total**2;
+      };
+      return calc;
+    });
+  };
 
 //~~~~~code for createHumanCalculator factory function~~~~~//
 
