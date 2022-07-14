@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+//~~~~~code for createCalculator factory function~~~~~//
+
 createCalculator = () => {
     return{
         total:0,
@@ -20,7 +23,7 @@ createCalculator = () => {
     };
 };
 
-/// try to re-do this using the 'map' method
+// try to re-do this using the 'map' method!
 
 addSquareMethod = (instances) => {
     for(let i=0;i<instances.length;i++){
@@ -29,4 +32,30 @@ addSquareMethod = (instances) => {
         };
     };
     return instances;
+};
+
+//~~~~~code for createHumanCalculator factory function~~~~~//
+
+const humanCalculatorMethods = {
+    add(num){
+        this.total+=num;
+        return null;
+    },
+    subtract(num){
+        this.total-=num;
+        return null;
+    },
+    value(){
+        return this.total;
+    },
+    clear(){
+        this.total=-10;
+        return null;
+    }
+};
+
+createHumanCalculator=()=>{
+    const humanCalculator = Object.create(humanCalculatorMethods);
+    humanCalculator.total = -10;
+    return humanCalculator;
 };
