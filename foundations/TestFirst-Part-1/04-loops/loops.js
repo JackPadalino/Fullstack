@@ -146,15 +146,16 @@ const paramifyObjectKeys=(obj)=>{
 //~~~~~sort function~~~~~//
 
 // solving 'sort' function with a selection sort algorithm:
-const sort=(arr)=>{
-    for(let a=0;a<arr.length-1;a++){
-        let index = a;
-        for(let b=a+1;b<arr.length;b++){
-            if(arr[b]<arr[index]){
-                index = b;
+const sort=arr=>{
+    let n=arr.length;
+    for(let a=0;a<n;a++){
+        for(let b=a+1;b<n;b++){
+            if(arr[a]>arr[b]){
+                let temp=arr[a];
+                arr[a]=arr[b];
+                arr[b]=temp;
             };
         };
-        [arr[a], arr[index]] = [arr[index], arr[a]];
     };
     return arr;
 };
