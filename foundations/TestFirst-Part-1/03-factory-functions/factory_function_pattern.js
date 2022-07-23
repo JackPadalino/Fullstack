@@ -18,13 +18,12 @@ const phoneFunctions = {
 };
 
 // Next, we write a 'factory function' which is a function that is going to create and return an instance of an object.
-// Note: The standard definition of a factory function is "any function that returns an object literal that is not a 
-// Constructor Function or Class."
 const phoneFactory=(brand,model)=>{
     // Here we pass in the prototype object as an argument to the create function
     // this will give each new object access to the prototype methods
     const newPhone = Object.create(phoneFunctions);
-    // now we give each new object their individual attributes
+    // now we give each new object their individual attributes. These attributes will not be in the object's
+    // prototype chain
     newPhone.brand = brand;
     newPhone.model = model;
     newPhone.power = 100;
